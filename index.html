@@ -114,7 +114,6 @@
       margin: 0.2em;
       cursor: pointer;
     }
-  <style>
     #player {
       display: none;
     }
@@ -186,6 +185,7 @@
         videoId: 'S30XdiTDINc',
         playerVars: {
           autoplay: 1,
+          mute: 1,
           loop: 1,
           playlist: 'S30XdiTDINc',
           controls: 0,
@@ -199,7 +199,6 @@
     }
 
     function onPlayerReady(event) {
-      event.target.mute();
       event.target.playVideo();
     }
   </script>
