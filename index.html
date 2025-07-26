@@ -73,7 +73,7 @@
     footer li {
       margin: 0.3em 0;
     }
-      .matrix-overlay {
+    .matrix-overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -114,7 +114,17 @@
       margin: 0.2em;
       cursor: pointer;
     }
-  <style>
+    .emoji-swarm {
+      position: fixed;
+      font-size: 2em;
+      animation: float 4s ease-in-out forwards;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    @keyframes float {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-100px); }
+    }
     #player {
       display: none;
     }
@@ -186,6 +196,7 @@
         videoId: 'S30XdiTDINc',
         playerVars: {
           autoplay: 1,
+          mute: 1,
           loop: 1,
           playlist: 'S30XdiTDINc',
           controls: 0,
@@ -204,19 +215,43 @@
   </script>
   <div class="emoji-toggle" onclick="toggleEmojiPanel()">🔆</div>
   <div class="emoji-panel" id="emojiPanel">
-    <span>✝️</span>
-    <span>🌈</span>
-    <span>🕊️</span>
-    <span>🕯️</span>
-    <span>⛪</span>
-    <span>📿</span>
-    <span>🛐</span>
+    <span onclick="spawnEmoji(event)">✝️</span>
+    <span onclick="spawnEmoji(event)">🌈</span>
+    <span onclick="spawnEmoji(event)">🕊️</span>
+    <span onclick="spawnEmoji(event)">🕯️</span>
+    <span onclick="spawnEmoji(event)">⛪</span>
+    <span onclick="spawnEmoji(event)">📿</span>
+    <span onclick="spawnEmoji(event)">🛐</span>
   </div>
   <script>
     function toggleEmojiPanel() {
       const panel = document.getElementById('emojiPanel');
       panel.style.display = (panel.style.display === 'none' || panel.style.display === '') ? 'block' : 'none';
     }
+
+    function spawnEmoji(event) {
+      const emoji = event.target.textContent;
+      createEmojiEffect(emoji);
+    }
+
+    function spawnEmojiFromMatrix(index) {
+      const emojiList = ["✝️", "🌈", "🕊️", "⛪", "📿", "🛐"];
+      const emoji = emojiList[Math.floor(Math.random() * emojiList.length)];
+      createEmojiEffect(emoji);
+    }
+
+    function createEmojiEffect(emoji) {
+      const span = document.createElement('span');
+      span.className = 'emoji-swarm';
+      span.textContent = emoji;
+      span.style.left = Math.random() * window.innerWidth + 'px';
+      span.style.top = Math.random() * window.innerHeight + 'px';
+      document.body.appendChild(span);
+      setTimeout(() => span.remove(), 4000);
+    }
+
+    // Periodically spawn random emojis for matrix effect
+    setInterval(() => spawnEmojiFromMatrix(), 2000);
   </script>
 </body>
 </html>
