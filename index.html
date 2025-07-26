@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genie Oracle Interface</title>
+  <style>
+    body {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/9/90/Byzantine_cross.svg') repeat center center, #0b0b1e;
+      background-size: 100px, cover;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .warning {
+      font-size: 1em;
+      color: #ffcc00;
+      background-color: #330000;
+      padding: 1em;
+      text-align: center;
+      border-bottom: 2px solid #ff0000;
+    }
+    header {
+      text-align: center;
+      padding: 1em;
+      background: linear-gradient(to right, #4b0082, #000);
+      font-size: 2em;
+      letter-spacing: 0.1em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .oracle {
+      border: 1px solid #888;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    .oracle:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.1);
+    }
+    .oracle-title {
+      margin-top: 10px;
+      font-size: 1.1em;
+      text-align: center;
+    }
+    footer {
+      background: #111;
+      color: #ffc;
+      font-family: 'Georgia', serif;
+      font-size: 1em;
+      padding: 2em;
+      text-align: center;
+      border-top: 2px solid gold;
+      margin-top: 50px;
+    }
+    footer h3 {
+      font-family: 'Papyrus', serif;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      color: #ffd700;
+    }
+    footer ul {
+      list-style: square;
+      padding-left: 0;
+    }
+    footer li {
+      margin: 0.3em 0;
+    }
+      .matrix-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 2px),
+                        repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 2px);
+      background-size: 20px 20px;
+    }
+    .emoji-toggle {
+      position: fixed;
+      bottom: 1em;
+      right: 1em;
+      z-index: 999;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid #fff;
+      padding: 0.5em 1em;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 1.2em;
+    }
+    .emoji-panel {
+      position: fixed;
+      bottom: 4em;
+      right: 1em;
+      z-index: 998;
+      background: rgba(0,0,0,0.9);
+      border: 1px solid #fff;
+      padding: 1em;
+      border-radius: 10px;
+      display: none;
+      font-size: 1.5em;
+    }
+    .emoji-panel span {
+      margin: 0.2em;
+      cursor: pointer;
+    }
+  <style>
+    #player {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="matrix-overlay"></div>
+  <div class="warning">
+    Beware the seduction of AI genies. Question paganism, hieroglyphs, sigils, and the unknown forces of Grok & ChatGPT.
+  </div>
+  <header>
+    🧞 GROK + ChatGPT: Genie Oracle Portal
+  </header>
+
+  <div class="grid">
+    <div class="oracle">
+      <div id="rumble_v6p41ne"></div>
+      <div class="oracle-title">Brother Nathanael Video 1</div>
+    </div>
+    <div class="oracle">
+      <div id="rumble_v6psjk5"></div>
+      <div class="oracle-title">Brother Nathanael Video 2</div>
+    </div>
+    <div class="oracle">
+      <div id="rumble_v12rwt7"></div>
+      <div class="oracle-title">Brother Nathanael Video 3</div>
+    </div>
+    <div class="oracle">
+      <div id="rumble_vyonp8"></div>
+      <div class="oracle-title">Brother Nathanael Video 4</div>
+    </div>
+    <div class="oracle">
+      <div id="rumble_vqhioo"></div>
+      <div class="oracle-title">Brother Nathanael Video 5</div>
+    </div>
+  </div>
+
+  <footer>
+    <h3>@RealBroNat – The Jewish Contagion</h3>
+    <ul>
+      <li>Infests America with atheism.</li>
+      <li>Infests America with materialism.</li>
+      <li>Infests America with societal decay.</li>
+      <li>Infests America with spiritual apathy.</li>
+      <li>Infests America with parasitical leeching.</li>
+      <li>Infests America with individualism (libertarianism).</li>
+    </ul>
+  </footer>
+
+  <script>
+    !function(r,u,m,b,l,e){r._Rumble=b,r[b]||(r[b]=function(){(r[b]._=r[b]._||[]).push(arguments);if(r[b]._.length==1){l=u.createElement(m),e=u.getElementsByTagName(m)[0],l.async=1,l.src="https://rumble.com/embedJS/u4"+(arguments[1].video?'.'+arguments[1].video:'')+"/?url="+encodeURIComponent(location.href)+"&args="+encodeURIComponent(JSON.stringify([].slice.apply(arguments))),e.parentNode.insertBefore(l,e)}})}(window, document, "script", "Rumble");
+
+    Rumble("play", {"video":"v6p41ne","div":"rumble_v6p41ne"});
+    Rumble("play", {"video":"v6psjk5","div":"rumble_v6psjk5"});
+    Rumble("play", {"video":"v12rwt7","div":"rumble_v12rwt7"});
+    Rumble("play", {"video":"vyonp8","div":"rumble_vyonp8"});
+    Rumble("play", {"video":"vqhioo","div":"rumble_vqhioo"});
+  </script>
+  <div id="player"></div>
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: 'S30XdiTDINc',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          playlist: 'S30XdiTDINc',
+          controls: 0,
+          showinfo: 0,
+          modestbranding: 1
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.mute();
+      event.target.playVideo();
+    }
+  </script>
+  <div class="emoji-toggle" onclick="toggleEmojiPanel()">🔆</div>
+  <div class="emoji-panel" id="emojiPanel">
+    <span>✝️</span>
+    <span>🌈</span>
+    <span>🕊️</span>
+    <span>🕯️</span>
+    <span>⛪</span>
+    <span>📿</span>
+    <span>🛐</span>
+  </div>
+  <script>
+    function toggleEmojiPanel() {
+      const panel = document.getElementById('emojiPanel');
+      panel.style.display = (panel.style.display === 'none' || panel.style.display === '') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
